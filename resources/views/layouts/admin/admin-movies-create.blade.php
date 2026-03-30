@@ -4,25 +4,6 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Add Movie — CineLog Admin</title>
 <link rel="stylesheet" href="../common.css">
-<style>
-.form-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2rem; align-items: start; }
-.poster-upload {
-  background: var(--surface2); border: 1px dashed var(--border-light); border-radius: var(--radius-lg);
-  aspect-ratio: 2/3; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 0.6rem; cursor: pointer; transition: border-color .15s, background .15s;
-  text-align: center; padding: 1rem;
-}
-.poster-upload:hover { border-color: var(--accent); background: var(--accent-dim); }
-.poster-upload-icon { font-size: 2rem; opacity: 0.4; }
-.poster-upload p { font-size: 0.78rem; color: var(--text-dim); }
-.poster-upload span { font-size: 0.7rem; color: var(--text-dim); }
-.sidebar-form-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1rem; }
-.sidebar-form-block h4 { font-family: var(--font-body); font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--text-dim); margin-bottom: 1rem; }
-.form-actions { display: flex; gap: .75rem; justify-content: flex-end; margin-top: 2rem; }
-.actor-tag { display: inline-flex; align-items: center; gap: .35rem; background: var(--surface3); border: 1px solid var(--border); border-radius: 99px; padding: .22rem .6rem; font-size: .72rem; color: var(--text-muted); }
-.actor-tag button { background: none; border: none; color: var(--text-dim); cursor: pointer; padding: 0; font-size: .8rem; line-height: 1; }
-.tags-wrap { display: flex; gap: .4rem; flex-wrap: wrap; margin-top: .5rem; }
-</style>
 </head>
 <body>
 <div class="layout-admin">

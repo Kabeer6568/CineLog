@@ -4,17 +4,6 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Movies — CineLog Admin</title>
 <link rel="stylesheet" href="../common.css">
-<style>
-.poster-cell { width: 32px; height: 46px; border-radius: 4px; background: var(--surface3); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
-.td-poster { width: 52px; }
-.bulk-bar {
-  background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 0.6rem 1rem; margin-bottom: 1rem;
-  display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; color: var(--text-muted);
-  display: none;
-}
-.bulk-bar.visible { display: flex; }
-</style>
 </head>
 <body>
 <div class="layout-admin">

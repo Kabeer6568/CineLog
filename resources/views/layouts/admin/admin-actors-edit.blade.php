@@ -4,22 +4,6 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Edit Actor — CineLog Admin</title>
 <link rel="stylesheet" href="../common.css">
-<style>
-.form-layout { display: grid; grid-template-columns: 1fr 260px; gap: 2rem; align-items: start; }
-.photo-preview {
-  width: 100%; aspect-ratio: 1; border-radius: 50%;
-  background: var(--surface2); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 3.5rem; overflow: hidden; margin-bottom: 0.75rem; position: relative;
-}
-.photo-preview-actions { display: flex; gap: 0.4rem; justify-content: center; }
-.sidebar-form-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1rem; }
-.sidebar-form-block h4 { font-family: var(--font-body); font-size: .72rem; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--text-dim); margin-bottom: 1rem; }
-.film-tag { display: inline-flex; align-items: center; gap: .35rem; background: var(--surface3); border: 1px solid var(--border); border-radius: var(--radius); padding: .22rem .6rem; font-size: .72rem; color: var(--text-muted); }
-.film-tag button { background: none; border: none; color: var(--text-dim); cursor: pointer; padding: 0; font-size: .8rem; }
-.tags-wrap { display: flex; gap: .4rem; flex-wrap: wrap; margin-top: .5rem; }
-.edit-badge { background: rgba(232,201,126,0.08); border: 1px solid rgba(232,201,126,0.2); border-radius: var(--radius); padding: .4rem .75rem; font-size: .75rem; color: var(--accent); margin-bottom: 1.5rem; display: inline-flex; align-items: center; gap: .4rem; }
-</style>
 </head>
 <body>
 <div class="layout-admin">

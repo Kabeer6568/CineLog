@@ -4,14 +4,6 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Actors — CineLog Admin</title>
 <link rel="stylesheet" href="../common.css">
-<style>
-.actor-avatar-cell {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--surface3); display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; flex-shrink: 0;
-}
-.td-avatar { width: 52px; }
-</style>
 </head>
 <body>
 <div class="layout-admin">

@@ -4,22 +4,6 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Genres — CineLog Admin</title>
 <link rel="stylesheet" href="../common.css">
-<style>
-.genre-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-.genre-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  padding: 1.2rem; display: flex; flex-direction: column; gap: 0.75rem;
-  transition: border-color .15s;
-}
-.genre-card:hover { border-color: var(--border-light); }
-.genre-card-top { display: flex; align-items: center; justify-content: space-between; }
-.genre-icon { width: 36px; height: 36px; border-radius: var(--radius); background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-.genre-actions { display: flex; gap: 0.3rem; }
-.genre-name { font-size: 0.95rem; font-weight: 500; color: var(--text); }
-.genre-meta { font-size: 0.75rem; color: var(--text-dim); }
-.genre-bar-bg { height: 3px; background: var(--surface3); border-radius: 2px; margin-top: 0.25rem; }
-.genre-bar-fill { height: 100%; border-radius: 2px; background: var(--accent); }
-</style>
 </head>
 <body>
 <div class="layout-admin">

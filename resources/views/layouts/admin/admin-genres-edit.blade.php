@@ -4,19 +4,6 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Edit Genre — CineLog Admin</title>
 <link rel="stylesheet" href="../common.css">
-<style>
-.form-layout { display: grid; grid-template-columns: 1fr 260px; gap: 2rem; align-items: start; }
-.sidebar-form-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1rem; }
-.sidebar-form-block h4 { font-family: var(--font-body); font-size: .72rem; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--text-dim); margin-bottom: 1rem; }
-.icon-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: .5rem; }
-.icon-opt { aspect-ratio: 1; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; transition: all .15s; }
-.icon-opt:hover { border-color: var(--border-light); }
-.icon-opt.selected { border-color: var(--accent); background: var(--accent-dim); }
-.edit-badge { background: rgba(232,201,126,0.08); border: 1px solid rgba(232,201,126,0.2); border-radius: var(--radius); padding: .4rem .75rem; font-size: .75rem; color: var(--accent); margin-bottom: 1.5rem; display: inline-flex; align-items: center; gap: .4rem; }
-.movie-link { display: flex; align-items: center; gap: .6rem; padding: .5rem 0; border-bottom: 1px solid var(--border); font-size: .82rem; color: var(--text-muted); }
-.movie-link:last-child { border-bottom: none; }
-.movie-link-icon { width: 24px; height: 36px; background: var(--surface3); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: .8rem; flex-shrink: 0; }
-</style>
 </head>
 <body>
 <div class="layout-admin">

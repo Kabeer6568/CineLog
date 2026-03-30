@@ -4,24 +4,6 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Add Genre — CineLog Admin</title>
 <link rel="stylesheet" href="../common.css">
-<style>
-.form-layout { display: grid; grid-template-columns: 1fr 260px; gap: 2rem; align-items: start; }
-.sidebar-form-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1rem; }
-.sidebar-form-block h4 { font-family: var(--font-body); font-size: .72rem; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--text-dim); margin-bottom: 1rem; }
-.icon-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: .5rem; }
-.icon-opt {
-  aspect-ratio: 1; border-radius: var(--radius); border: 1px solid var(--border);
-  background: var(--surface2); display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; cursor: pointer; transition: all .15s;
-}
-.icon-opt:hover { border-color: var(--border-light); background: var(--surface3); }
-.icon-opt.selected { border-color: var(--accent); background: var(--accent-dim); }
-.preview-badge {
-  padding: 0.6rem 1.2rem; border-radius: 99px; font-size: 0.85rem;
-  font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem;
-  margin-top: 0.75rem;
-}
-</style>
 </head>
 <body>
 <div class="layout-admin">

@@ -1,55 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Favorites — CineLog</title>
-<link rel="stylesheet" href="../common.css">
-<style>
-.fav-summary {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem; margin-bottom: 2.5rem;
-}
-.fav-stat {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  padding: 1rem 1.2rem;
-}
-.fav-stat .val { font-family: var(--font-display); font-size: 1.8rem; color: var(--text); line-height: 1; }
-.fav-stat .lbl { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-top: 0.3rem; }
 
-.list-view .movie-card {
-  display: grid; grid-template-columns: 60px 1fr auto;
-  gap: 1rem; align-items: center;
-  border-radius: var(--radius);
-  padding: 0.5rem;
-}
-.list-view .movie-poster { width: 60px; height: 90px; border-radius: var(--radius); flex-shrink: 0; aspect-ratio: unset; }
-.list-view .movie-overlay { display: none; }
-.list-view .movie-info { padding: 0; }
-.list-view .movie-title { font-size: 0.9rem; white-space: normal; }
+@extends('layouts.user.user')
 
-.view-toggle { display: flex; gap: 0.3rem; }
-.view-btn {
-  width: 30px; height: 30px; border-radius: var(--radius); border: 1px solid var(--border);
-  background: transparent; color: var(--text-dim); cursor: pointer; display: flex;
-  align-items: center; justify-content: center; transition: all .15s; font-size: 0.85rem;
-}
-.view-btn.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
-</style>
-</head>
-<body>
-<div class="layout-user">
-
-  <header class="user-header">
-    <a href="movies-index.html" class="logo">Cine<span>Log</span></a>
-    <div class="header-search">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" placeholder="Search favorites…" id="search-input">
-    </div>
-    <nav class="user-nav">
-      <a href="movies-index.html">Movies</a>
-      <a href="favorites-index.html" class="active">Favorites</a>
-    </nav>
-  </header>
+@section('content')
 
   <main class="main-content">
 
@@ -192,27 +144,4 @@
   </main>
 </div>
 
-<div id="toasts"></div>
-<script src="../common.js"></script>
-<script>
-  initChips('.chip');
-
-  function setView(v) {
-    const grid = document.getElementById('favorites-grid');
-    document.getElementById('grid-btn').classList.toggle('active', v === 'grid');
-    document.getElementById('list-btn').classList.toggle('active', v === 'list');
-    grid.classList.toggle('list-view', v === 'list');
-    if (v === 'list') grid.style.gridTemplateColumns = '1fr';
-    else grid.style.gridTemplateColumns = '';
-  }
-
-  function removeFav(btn) {
-    const card = btn.closest('.movie-card');
-    card.style.transition = 'opacity .3s, transform .3s';
-    card.style.opacity = '0'; card.style.transform = 'scale(0.95)';
-    setTimeout(() => card.remove(), 300);
-    toast('Removed from favorites', 'info');
-  }
-</script>
-</body>
-</html>
+@endsection

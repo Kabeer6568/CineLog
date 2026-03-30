@@ -1,50 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Movies — CineLog</title>
-<link rel="stylesheet" href="../common.css">
-<style>
-.hero {
-  margin-bottom: 2.5rem;
-  padding: 3rem 0 2rem;
-  position: relative;
-}
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232,201,126,0.05), transparent);
-  pointer-events: none;
-}
-.hero-title { font-size: clamp(2rem,5vw,3.5rem); font-style: italic; margin-bottom: 0.5rem; }
-.hero-sub { font-size: 0.9rem; color: var(--text-muted); }
 
-.genre-scroll {
-  display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem;
-  scrollbar-width: none; margin-bottom: 1.5rem;
-}
-.genre-scroll::-webkit-scrollbar { display: none; }
+@extends('layouts.user.user')
 
-.sort-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-.sort-row select { width: auto; min-width: 160px; }
-.results-count { font-size: 0.78rem; color: var(--text-dim); margin-left: auto; }
-</style>
-</head>
-<body>
-<div class="layout-user">
-
-  <!-- HEADER -->
-  <header class="user-header">
-    <a href="../user/movies-index.html" class="logo">Cine<span>Log</span></a>
-    <div class="header-search">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" placeholder="Search movies…" id="search-input">
-    </div>
-    <nav class="user-nav">
-      <a href="movies-index.html" class="active">Movies</a>
-      <a href="favorites-index.html">Favorites</a>
-    </nav>
-  </header>
+@section('content')
 
   <main class="main-content">
 
@@ -221,10 +178,11 @@
 </div>
 
 <div id="toasts"></div>
-<script src="../common.js"></script>
+@endsection
+<!-- <script src="../common.js"></script>
 <script>
   initChips('.chip');
   initSearch('#search-input', '.movie-card', '.movie-title');
 </script>
 </body>
-</html>
+</html> -->

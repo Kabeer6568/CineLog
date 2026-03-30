@@ -4,40 +4,6 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dashboard — CineLog Admin</title>
 <link rel="stylesheet" href="../common.css">
-<style>
-.dash-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-.activity-row {
-  display: flex; align-items: center; gap: 0.75rem;
-  padding: 0.7rem 0; border-bottom: 1px solid var(--border); font-size: 0.82rem;
-}
-.activity-row:last-child { border-bottom: none; }
-.act-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-.act-dot.green { background: var(--green); }
-.act-dot.gold { background: var(--accent); }
-.act-dot.red { background: var(--red); }
-.act-text { flex: 1; color: var(--text-muted); }
-.act-text strong { color: var(--text); font-weight: 500; }
-.act-time { font-size: 0.7rem; color: var(--text-dim); white-space: nowrap; }
-
-.top-movie-row {
-  display: flex; align-items: center; gap: 0.75rem;
-  padding: 0.6rem 0; border-bottom: 1px solid var(--border);
-}
-.top-movie-row:last-child { border-bottom: none; }
-.tm-num { font-family: var(--font-display); font-style: italic; font-size: 1.2rem; color: var(--text-dim); width: 24px; text-align: center; flex-shrink: 0; }
-.tm-poster { width: 30px; height: 44px; background: var(--surface3); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
-.tm-info { flex: 1; }
-.tm-title { font-size: 0.82rem; font-weight: 500; color: var(--text); }
-.tm-genre { font-size: 0.7rem; color: var(--text-dim); }
-.tm-score { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
-
-.chart-bar-wrap { margin-top: 0.75rem; }
-.chart-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.6rem; font-size: 0.75rem; }
-.chart-label { width: 70px; color: var(--text-muted); text-align: right; flex-shrink: 0; }
-.chart-bar-bg { flex: 1; height: 6px; background: var(--surface3); border-radius: 3px; overflow: hidden; }
-.chart-bar-fill { height: 100%; border-radius: 3px; background: var(--accent); transition: width .6s ease; }
-.chart-val { width: 30px; color: var(--text-dim); font-size: 0.7rem; }
-</style>
 </head>
 <body>
 <div class="layout-admin">

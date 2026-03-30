@@ -1,98 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Oppenheimer — CineLog</title>
-<link rel="stylesheet" href="../common.css">
-<style>
-.movie-backdrop {
-  width: 100%; height: 280px;
-  background: linear-gradient(160deg, #1a1508 0%, #0a0a0a 100%);
-  position: relative; overflow: hidden; margin-bottom: 0;
-  display: flex; align-items: flex-end;
-}
-.movie-backdrop::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 80% at 30% 50%, rgba(232,201,126,0.08), transparent);
-}
-.backdrop-poster {
-  position: absolute; right: 0; top: 0; bottom: 0; width: 50%;
-  background: linear-gradient(to left, rgba(26,21,8,0.3), rgba(10,10,10,1));
-  display: flex; align-items: center; justify-content: flex-end;
-  padding-right: 2.5rem;
-}
-.poster-thumb {
-  width: 120px; height: 180px;
-  background: var(--surface2); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 2.5rem; box-shadow: var(--shadow-lg); flex-shrink: 0;
-}
-.backdrop-content {
-  position: relative; z-index: 1;
-  padding: 0 clamp(1rem,4vw,2.5rem) 2rem;
-}
-.movie-genres { display: flex; gap: 0.4rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
-.movie-show-title { font-size: clamp(1.8rem,4vw,3rem); font-style: italic; margin-bottom: 0.5rem; }
-.movie-meta-row {
-  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
-  font-size: 0.8rem; color: var(--text-muted);
-}
-.movie-meta-row .sep { color: var(--text-dim); }
-.meta-rating { color: var(--accent); font-weight: 600; font-size: 1rem; }
 
-.movie-body { padding: clamp(1.5rem,4vw,2.5rem); }
-.movie-layout { display: grid; grid-template-columns: 1fr 300px; gap: 2.5rem; }
-.movie-overview { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 1.5rem; }
+@extends('layouts.user.user')
 
-/* actors */
-.cast-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 0.75rem; }
-.cast-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 0.75rem 0.5rem; text-align: center;
-}
-.cast-avatar {
-  width: 48px; height: 48px; border-radius: 50%;
-  background: var(--surface2); margin: 0 auto 0.5rem;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem;
-}
-.cast-name { font-size: 0.72rem; font-weight: 500; color: var(--text); }
-.cast-role { font-size: 0.66rem; color: var(--text-dim); margin-top: 0.1rem; }
-
-/* sidebar */
-.movie-sidebar {}
-.sidebar-block {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  padding: 1.25rem; margin-bottom: 1rem;
-}
-.sidebar-block h4 { font-family: var(--font-body); font-size: 0.72rem; font-weight: 500;
-  text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 0.9rem; }
-.info-row { display: flex; justify-content: space-between; padding: 0.45rem 0; border-bottom: 1px solid var(--border); font-size: 0.8rem; }
-.info-row:last-child { border-bottom: none; }
-.info-row span:first-child { color: var(--text-dim); }
-.info-row span:last-child { color: var(--text); font-weight: 500; }
-
-.star-row { display: flex; gap: 0.3rem; margin-bottom: 0.75rem; }
-.star { font-size: 1.2rem; cursor: pointer; color: var(--text-dim); transition: color .1s; }
-.star:hover, .star.on { color: var(--accent); }
-.user-review-text { font-size: 0.825rem; color: var(--text-muted); }
-
-.actions-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1rem; }
-</style>
-</head>
-<body>
-<div class="layout-user">
-
-  <!-- HEADER -->
-  <header class="user-header">
-    <a href="movies-index.html" class="logo">Cine<span>Log</span></a>
-    <nav class="user-nav">
-      <a href="movies-index.html" class="active">Movies</a>
-      <a href="favorites-index.html">Favorites</a>
-    </nav>
-  </header>
+@section('content')
 
   <!-- BACKDROP -->
   <div class="movie-backdrop fu">
@@ -214,7 +123,9 @@
 </div>
 
 <div id="toasts"></div>
-<script src="../common.js"></script>
+
+@endsection
+<!-- <script src="../common.js"></script>
 <script>
   let userRating = 0;
   function rate(n) {
@@ -225,4 +136,4 @@
   }
 </script>
 </body>
-</html>
+</html> -->

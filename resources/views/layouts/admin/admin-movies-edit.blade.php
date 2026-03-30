@@ -4,31 +4,6 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Edit Movie — CineLog Admin</title>
 <link rel="stylesheet" href="../common.css">
-<style>
-.form-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2rem; align-items: start; }
-.poster-preview {
-  border-radius: var(--radius-lg); overflow: hidden; position: relative;
-  aspect-ratio: 2/3; background: var(--surface2);
-  display: flex; align-items: center; justify-content: center; font-size: 4rem;
-}
-.poster-preview-actions {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  background: rgba(0,0,0,0.8); padding: 0.6rem;
-  display: flex; gap: 0.4rem; justify-content: center;
-}
-.sidebar-form-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1rem; }
-.sidebar-form-block h4 { font-family: var(--font-body); font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--text-dim); margin-bottom: 1rem; }
-.form-actions { display: flex; gap: .75rem; justify-content: space-between; margin-top: 2rem; align-items: center; }
-.actor-tag { display: inline-flex; align-items: center; gap: .35rem; background: var(--surface3); border: 1px solid var(--border); border-radius: 99px; padding: .22rem .6rem; font-size: .72rem; color: var(--text-muted); }
-.actor-tag button { background: none; border: none; color: var(--text-dim); cursor: pointer; padding: 0; font-size: .8rem; line-height: 1; }
-.tags-wrap { display: flex; gap: .4rem; flex-wrap: wrap; margin-top: .5rem; }
-.edit-badge {
-  background: rgba(232,201,126,0.08); border: 1px solid rgba(232,201,126,0.2);
-  border-radius: var(--radius); padding: .4rem .75rem;
-  font-size: .75rem; color: var(--accent); margin-bottom: 1.5rem;
-  display: inline-flex; align-items: center; gap: .4rem;
-}
-</style>
 </head>
 <body>
 <div class="layout-admin">
