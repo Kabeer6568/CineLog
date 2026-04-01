@@ -535,3 +535,11 @@ hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
 .movie-link { display: flex; align-items: center; gap: .6rem; padding: .5rem 0; border-bottom: 1px solid var(--border); font-size: .82rem; color: var(--text-muted); }
 .movie-link:last-child { border-bottom: none; }
 .movie-link-icon { width: 24px; height: 36px; background: var(--surface3); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: .8rem; flex-shrink: 0; }
+
+
+.form-layout-login {
+    display: grid;
+    /* grid-template-columns: 1fr 280px; */
+    gap: 2rem;
+    justify-items: center;
+}

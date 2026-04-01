@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Add Movie — CineLog Admin</title>
-<link rel="stylesheet" href="../common.css">
-</head>
-<body>
+
+@extends('layouts.admin.admin')
+
+@section('content')
 <div class="layout-admin">
   <div id="admin-sidebar-placeholder" data-active="movies/create"></div>
 
@@ -169,8 +165,7 @@
   </main>
 </div>
 <div id="toasts"></div>
-<script src="../common.js"></script>
-<script src="admin-nav.js"></script>
+
 <script>
   function addActor() {
     const val = document.getElementById('actor-search').value.trim();
@@ -184,5 +179,4 @@
   function saveDraft() { toast('Saved as draft', 'success'); }
   function publishMovie() { toast('Movie published!', 'success'); setTimeout(() => location.href='admin-movies-index.html', 1200); }
 </script>
-</body>
-</html>
+@endsection

@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Genres — CineLog Admin</title>
-<link rel="stylesheet" href="../common.css">
-</head>
-<body>
+
+@extends('layouts.admin.admin')
+
+@section('content')
 <div class="layout-admin">
   <div id="admin-sidebar-placeholder" data-active="genres/index"></div>
 
@@ -166,8 +162,7 @@
   </main>
 </div>
 <div id="toasts"></div>
-<script src="../common.js"></script>
-<script src="admin-nav.js"></script>
+
 <script>
   const inp = document.getElementById('search-input');
   inp.addEventListener('input', () => {
@@ -178,5 +173,4 @@
     });
   });
 </script>
-</body>
-</html>
+@endsection

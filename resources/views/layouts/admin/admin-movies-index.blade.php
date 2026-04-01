@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Movies — CineLog Admin</title>
-<link rel="stylesheet" href="../common.css">
-</head>
-<body>
+
+@extends('layouts.admin.admin')
+
+@section('content')
 <div class="layout-admin">
   <div id="admin-sidebar-placeholder" data-active="movies/index"></div>
 
@@ -174,8 +170,7 @@
   </main>
 </div>
 <div id="toasts"></div>
-<script src="../common.js"></script>
-<script src="admin-nav.js"></script>
+
 <script>
   initChips('.chip');
   initSearch('#search-input', 'tbody tr', '.td-main');
@@ -191,5 +186,4 @@
     document.getElementById('bulk-bar').classList.remove('visible');
   }
 </script>
-</body>
-</html>
+@endsection

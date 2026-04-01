@@ -71,3 +71,5 @@ document.addEventListener('DOMContentLoaded', () => {
     placeholder.outerHTML = getAdminSidebar(active);
   }
 });
+
+console.log('hello')
