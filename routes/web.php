@@ -8,8 +8,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dash', function () {
-    return view('layouts.admin.admin-dashboard')->name('admin.dashboard');
-});
+    return view('layouts.admin.admin-dashboard');
+})->name('admin.dashboard');
 
 
 //Admin Login 
@@ -19,3 +19,8 @@ Route::get('/admin', function () {
 })->name('admin.dash');
 
 Route::post('/admin' , [AuthController::class , 'login'])->name('admin.login');
+
+//Admin Movies Pages  
+
+Route::get('/all-movies' , [AuthController::class , 'allMovies'])->name('admin.allMovies');
+Route::get('/create-movies' , [AuthController::class , 'createMovies'])->name('admin.createMovies');

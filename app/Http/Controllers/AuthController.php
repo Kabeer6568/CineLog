@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Storage;
 class AuthController extends Controller
 {
 
+
+//Admin Login
+
     public function login(Request $request){
 
         $request->validate([
@@ -31,6 +34,24 @@ class AuthController extends Controller
         Auth::attempt($credentials);
 
         return redirect()->route('admin.dashboard')->with('success' , 'Logged In');
+
+    }
+
+    // Movie View Admin Page
+
+    public function allMovies(){
+
+        $user = auth()->user();
+
+        return view('layouts.admin.admin-movies-index');
+
+    }
+    
+    public function createMovies(){
+
+        $user = auth()->user();
+
+        return view('layouts.admin.admin-movies-create');
 
     }
 
