@@ -37,22 +37,6 @@ class AuthController extends Controller
 
     }
 
-    // Movie View Admin Page
-
-    public function allMovies(){
-
-        $user = auth()->user();
-
-        return view('layouts.admin.admin-movies-index');
-
-    }
     
-    public function createMovies(){
-
-        $user = auth()->user();
-
-        return view('layouts.admin.admin-movies-create');
-
-    }
 
 }

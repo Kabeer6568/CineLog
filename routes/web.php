@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MovieController;
 
 Route::get('/', function () {
     return view('layouts.user.favorites-index');
@@ -22,5 +23,6 @@ Route::post('/admin' , [AuthController::class , 'login'])->name('admin.login');
 
 //Admin Movies Pages  
 
-Route::get('/all-movies' , [AuthController::class , 'allMovies'])->name('admin.allMovies');
-Route::get('/create-movies' , [AuthController::class , 'createMovies'])->name('admin.createMovies');
+Route::get('/all-movies' , [MovieController::class , 'allMovies'])->name('admin.allMovies');
+Route::get('/create-movies' , [MovieController::class , 'moviesPage'])->name('admin.moviesPage');
+Route::post('/create-movies' , [MovieController::class , 'createMovie'])->name('admin.createMovie');

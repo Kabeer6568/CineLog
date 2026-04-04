@@ -11,16 +11,19 @@ class Movie extends Model
 
     protected $fillable = [
         'title',
-        'original-title',
+        'original_title',  
         'overview',
-        'releaseYear',
-        'runTime',
+        'release_year',    
+        'run_time',         
         'director',
         'country',
         'language',
         'budget',
         'genre',
         'cast',
+        'poster',
+        'imdb_score',
+        'content_rating',
         'status',
     ];
 }

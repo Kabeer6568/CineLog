@@ -14,16 +14,19 @@ return new class extends Migration
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('original-title');
+            $table->string('original_title')->nullable();
             $table->text('overview');
-            $table->year('releaseYear');
-            $table->integer('runTime');
-            $table->text('director');
-            $table->text('country');
-            $table->text('language');
-            $table->text('budget');
-            $table->text('genre');
-            $table->text('cast');
+            $table->year('release_year');
+            $table->integer('run_time');
+            $table->string('director');
+            $table->string('country');
+            $table->string('language');
+            $table->decimal('budget', 15, 2)->nullable();
+            $table->string('genre');
+            $table->string('cast');
+            $table->string('poster');
+            $table->decimal('imdb_score', 3, 1)->nullable();
+            $table->enum('content_rating', ['G','PG','PG-13','R','NC-17'])->nullable();
             $table->enum('status', ['published', 'draft'])->default('draft');
             $table->timestamps();
         });

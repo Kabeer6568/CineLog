@@ -7,7 +7,8 @@
      data-active="movies/index"
      data-dashboard-url="{{ route('admin.dashboard') }}"
      data-movies-index-url="{{ route('admin.allMovies') }}"
-     data-movies-create-url="{{ route('admin.createMovies') }}">
+     data-movies-create-url="{{ route('admin.moviesPage') }}">
+     
   </div>
 
   <main class="admin-main">
