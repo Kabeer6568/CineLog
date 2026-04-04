@@ -15,27 +15,27 @@ class AuthController extends Controller
 
     public function login(Request $request){
 
-        $request->validate([
-
-        'login' => 'required|string|max:255',
+    $request->validate([
+        'login'    => 'required|string|max:255',
         'password' => 'required|string|max:255',
+    ]);
 
-        ]);
+    $filterData = filter_var($request->login, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
 
-        $filterData = filter_var($request->login , FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
+    $credentials = [
+        $filterData  => $request->login,
+        'password'   => $request->password,
+    ];
 
-        $credentials = ([
-
-        $filterData => $request->login,
-        'password' => $request->password,
-
-        ]);
-
-        Auth::attempt($credentials);
-
-        return redirect()->route('admin.dashboard')->with('success' , 'Logged In');
-
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
+        return redirect()->route('admin.dashboard')->with('success', 'Logged In');
     }
+
+    return back()->withErrors([
+        'login' => 'Invalid credentials.',
+    ]);
+}
 
     
 

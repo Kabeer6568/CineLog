@@ -6,11 +6,8 @@ use App\Http\Controllers\MovieController;
 
 Route::get('/', function () {
     return view('layouts.user.favorites-index');
-});
+})->name('main.index');
 
-Route::get('/dash', function () {
-    return view('layouts.admin.admin-dashboard');
-})->name('admin.dashboard');
 
 
 //Admin Login 
@@ -21,8 +18,14 @@ Route::get('/admin', function () {
 
 Route::post('/admin' , [AuthController::class , 'login'])->name('admin.login');
 
+
+Route::get('/dash', function () {
+    return view('layouts.admin.admin-dashboard');
+})->middleware('auth')->name('admin.dashboard');
+
+
 //Admin Movies Pages  
 
-Route::get('/all-movies' , [MovieController::class , 'allMovies'])->name('admin.allMovies');
-Route::get('/create-movies' , [MovieController::class , 'moviesPage'])->name('admin.moviesPage');
-Route::post('/create-movies' , [MovieController::class , 'createMovie'])->name('admin.createMovie');
+Route::get('/all-movies' , [MovieController::class , 'allMovies'])->middleware('auth')->name('admin.allMovies');
+Route::get('/create-movies' , [MovieController::class , 'moviesPage'])->middleware('auth')->name('admin.moviesPage');
+Route::post('/create-movies' , [MovieController::class , 'createMovie'])->middleware('auth')->name('admin.createMovie');

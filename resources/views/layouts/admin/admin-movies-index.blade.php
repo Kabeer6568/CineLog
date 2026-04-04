@@ -8,7 +8,7 @@
      data-dashboard-url="{{ route('admin.dashboard') }}"
      data-movies-index-url="{{ route('admin.allMovies') }}"
      data-movies-create-url="{{ route('admin.moviesPage') }}">
-     
+
   </div>
 
   <main class="admin-main">
@@ -71,14 +71,18 @@
           </tr>
         </thead>
         <tbody id="movies-tbody">
+
+        @foreach($movies as $movie)
           <tr>
             <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
-            <td><div class="poster-cell">🎬</div></td>
-            <td><span class="td-main">Oppenheimer</span></td>
-            <td>2023</td>
+            <td><div class="poster-cell">
+              <img src="{{ asset('storage/' . $movie->poster) }}" >
+            </div></td>
+            <td><span class="td-main">{{ $movie->title }}</span></td>
+            <td>{{ $movie->release_year }}</td>
             <td><span class="badge badge-neutral">Drama</span></td>
-            <td><span style="color:var(--accent)">★ 8.4</span></td>
-            <td><span class="badge badge-green">Published</span></td>
+            <td><span style="color:var(--accent)">★ {{ $movie->imdb_score }}</span></td>
+            <td><span class="badge badge-green">{{ $movie->status }}</span></td>
             <td>
               <div style="display:flex;gap:.4rem">
                 <a href="admin-movies-edit.html" class="btn btn-ghost btn-sm btn-icon" title="Edit">✎</a>
@@ -86,51 +90,9 @@
               </div>
             </td>
           </tr>
-          <tr>
-            <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
-            <td><div class="poster-cell">🌌</div></td>
-            <td><span class="td-main">Dune: Part Two</span></td>
-            <td>2024</td>
-            <td><span class="badge badge-neutral">Sci-Fi</span></td>
-            <td><span style="color:var(--accent)">★ 9.0</span></td>
-            <td><span class="badge badge-green">Published</span></td>
-            <td>
-              <div style="display:flex;gap:.4rem">
-                <a href="admin-movies-edit.html" class="btn btn-ghost btn-sm btn-icon">✎</a>
-                <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete Dune: Part Two?', () => toast('Deleted','success'))">🗑</button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
-            <td><div class="poster-cell">🌊</div></td>
-            <td><span class="td-main">Past Lives</span></td>
-            <td>2023</td>
-            <td><span class="badge badge-neutral">Romance</span></td>
-            <td><span style="color:var(--accent)">★ 8.7</span></td>
-            <td><span class="badge badge-green">Published</span></td>
-            <td>
-              <div style="display:flex;gap:.4rem">
-                <a href="admin-movies-edit.html" class="btn btn-ghost btn-sm btn-icon">✎</a>
-                <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete Past Lives?', () => toast('Deleted','success'))">🗑</button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
-            <td><div class="poster-cell">🕵️</div></td>
-            <td><span class="td-main">Killers of the Flower Moon</span></td>
-            <td>2023</td>
-            <td><span class="badge badge-neutral">Crime</span></td>
-            <td><span style="color:var(--accent)">★ 8.1</span></td>
-            <td><span class="badge badge-green">Published</span></td>
-            <td>
-              <div style="display:flex;gap:.4rem">
-                <a href="admin-movies-edit.html" class="btn btn-ghost btn-sm btn-icon">✎</a>
-                <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete?', () => toast('Deleted','success'))">🗑</button>
-              </div>
-            </td>
-          </tr>
+          @endforeach
+
+          
           <tr>
             <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
             <td><div class="poster-cell">🤖</div></td>

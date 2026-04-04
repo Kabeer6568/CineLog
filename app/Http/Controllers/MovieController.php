@@ -14,9 +14,9 @@ class MovieController extends Controller
 
     public function allMovies(){
 
-        $user = auth()->user();
+        $movies = Movie::all();
 
-        return view('layouts.admin.admin-movies-index');
+        return view('layouts.admin.admin-movies-index' , compact('movies'));
 
     }
     
