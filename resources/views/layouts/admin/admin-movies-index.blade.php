@@ -80,12 +80,12 @@
             </div></td>
             <td><span class="td-main">{{ $movie->title }}</span></td>
             <td>{{ $movie->release_year }}</td>
-            <td><span class="badge badge-neutral">Drama</span></td>
+            <td><span class="badge badge-neutral">{{ $movie->genre }}</span></td>
             <td><span style="color:var(--accent)">★ {{ $movie->imdb_score }}</span></td>
-            <td><span class="badge badge-green">{{ $movie->status }}</span></td>
+            <td><span class="badge badge-{{ $movie->status === 'draft' ? 'red' : 'green'}}">{{ $movie->status }}</span></td>
             <td>
               <div style="display:flex;gap:.4rem">
-                <a href="admin-movies-edit.html" class="btn btn-ghost btn-sm btn-icon" title="Edit">✎</a>
+                <a href="{{ route('admin.editMoviePage' , $movie->id) }}" class="btn btn-ghost btn-sm btn-icon" title="Edit">✎</a>
                 <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete Oppenheimer?', () => toast('Deleted','success'))" title="Delete">🗑</button>
               </div>
             </td>
@@ -93,36 +93,7 @@
           @endforeach
 
           
-          <tr>
-            <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
-            <td><div class="poster-cell">🤖</div></td>
-            <td><span class="td-main">The Creator</span></td>
-            <td>2023</td>
-            <td><span class="badge badge-neutral">Sci-Fi</span></td>
-            <td><span style="color:var(--accent)">★ 7.6</span></td>
-            <td><span class="badge badge-red">Draft</span></td>
-            <td>
-              <div style="display:flex;gap:.4rem">
-                <a href="admin-movies-edit.html" class="btn btn-ghost btn-sm btn-icon">✎</a>
-                <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete?', () => toast('Deleted','success'))">🗑</button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
-            <td><div class="poster-cell">🎭</div></td>
-            <td><span class="td-main">Poor Things</span></td>
-            <td>2023</td>
-            <td><span class="badge badge-neutral">Comedy</span></td>
-            <td><span style="color:var(--accent)">★ 7.9</span></td>
-            <td><span class="badge badge-green">Published</span></td>
-            <td>
-              <div style="display:flex;gap:.4rem">
-                <a href="admin-movies-edit.html" class="btn btn-ghost btn-sm btn-icon">✎</a>
-                <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete?', () => toast('Deleted','success'))">🗑</button>
-              </div>
-            </td>
-          </tr>
+          
         </tbody>
       </table>
     </div>

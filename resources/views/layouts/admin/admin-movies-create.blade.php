@@ -83,16 +83,16 @@
       <div class="card-body">
         <div class="section-title">Genres</div>
         <div class="chips" id="genre-chips">
-          <button type="button" class="chip" onclick="this.classList.toggle('active')">Action</button>
-          <button type="button" class="chip" onclick="this.classList.toggle('active')">Drama</button>
-          <button type="button" class="chip active" onclick="this.classList.toggle('active')">Sci-Fi</button>
-          <button type="button" class="chip" onclick="this.classList.toggle('active')">Comedy</button>
-          <button type="button" class="chip" onclick="this.classList.toggle('active')">Thriller</button>
-          <button type="button" class="chip" onclick="this.classList.toggle('active')">Horror</button>
-          <button type="button" class="chip" onclick="this.classList.toggle('active')">Romance</button>
-          <button type="button" class="chip" onclick="this.classList.toggle('active')">Documentary</button>
-          <button type="button" class="chip" onclick="this.classList.toggle('active')">Animation</button>
-          <button type="button" class="chip" onclick="this.classList.toggle('active')">Crime</button>
+          <button type="button" class="chip" onclick="selectGenre(this)">Action</button>
+          <button type="button" class="chip" onclick="selectGenre(this)">Drama</button>
+          <button type="button" class="chip active" onclick="selectGenre(this)">Sci-Fi</button>
+          <button type="button" class="chip" onclick="selectGenre(this)">Comedy</button>
+          <button type="button" class="chip" onclick="selectGenre(this)">Thriller</button>
+          <button type="button" class="chip" onclick="selectGenre(this)">Horror</button>
+          <button type="button" class="chip" onclick="selectGenre(this)">Romance</button>
+          <button type="button" class="chip" onclick="selectGenre(this)">Documentary</button>
+          <button type="button" class="chip" onclick="selectGenre(this)">Animation</button>
+          <button type="button" class="chip" onclick="selectGenre(this)">Crime</button>
         </div>
         {{-- hidden input gets filled by JS below --}}
         <input type="hidden" name="genre" id="genre-value">
@@ -175,6 +175,10 @@
 <div id="toasts"></div>
 
 <script>
+  function selectGenre(el) {
+  document.querySelectorAll('#genre-chips .chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+}
   document.querySelector('form').addEventListener('submit', function () {
   const genres = [...document.querySelectorAll('#genre-chips .chip.active')]
     .map(c => c.textContent.trim()).join(',');

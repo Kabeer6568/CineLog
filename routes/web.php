@@ -28,4 +28,9 @@ Route::get('/dash', function () {
 
 Route::get('/all-movies' , [MovieController::class , 'allMovies'])->middleware('auth')->name('admin.allMovies');
 Route::get('/create-movies' , [MovieController::class , 'moviesPage'])->middleware('auth')->name('admin.moviesPage');
+
 Route::post('/create-movies' , [MovieController::class , 'createMovie'])->middleware('auth')->name('admin.createMovie');
+
+Route::get('/edit-movies/{id}' , [MovieController::class , 'editMoviePage'])->middleware('auth')->name('admin.editMoviePage');
+
+Route::post('/edit-movies/{id}' , [MovieController::class , 'eidtMovie'])->middleware('auth')->name('admin.editMovie');

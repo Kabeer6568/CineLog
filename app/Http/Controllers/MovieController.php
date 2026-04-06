@@ -41,7 +41,7 @@ class MovieController extends Controller
         'country' => 'required|string|max:255',
         'language' => 'required|string|max:255',
         'budget' => 'nullable|numeric',
-        'genre' => 'required|string|max:255',
+        'genre' => 'required|in:Action,Drama,Sci-Fi,Comedy,Thriller,Horror,Romance,Documentary,Animation,Crime',
         'cast' => 'required|string|max:255',
         'poster' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         'imdb_score' => 'nullable|numeric|min:0|max:10',
@@ -59,6 +59,57 @@ class MovieController extends Controller
         $movies = Movie::create($validate);
 
         return redirect()->route('admin.allMovies')->with('success' , 'Movie Added');
+
+    }
+
+    public function editMoviePage($id){
+
+        $movie = Movie::findOrFail($id);
+
+        return view('layouts.admin.admin-movies-edit' , compact('movie'));
+
+    }
+
+    public function eidtMovie(Request $request , $id){
+
+        $movie = Movie::findOrFail($id);
+
+        $data = $request->validate([
+
+        'title' => 'nullable|string|max:255',
+        'original_title' => 'nullable|string|max:255',
+        'overview' => 'nullable|string|max:255',
+        'release_year' => 'nullable|integer|min:1900|max:2030',
+        'run_time' => 'nullable|integer',
+        'director' => 'nullable|string|max:255',
+        'country' => 'nullable|string|max:255',
+        'language' => 'nullable|string|max:255',
+        'budget' => 'nullable|numeric',
+        'genre' => 'nullable|in:Action,Drama,Sci-Fi,Comedy,Thriller,Horror,Romance,Documentary,Animation,Crime',
+        'cast' => 'nullable|string|max:255',
+        'poster' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'imdb_score' => 'nullable|numeric|min:0|max:10',
+        'content_rating' => 'nullable|in:G,PG,PG-13,R,NC-17',
+        'status' => 'nullable|in:published,draft',
+
+        ]);
+
+        $movie->fill(collect($data)->except(['poster'])->toArray());
+
+        if ($request->hasFile('poster')) {
+            
+            if ($movie->poster && Storage::disk('public')->exists($movie->poster)) {
+                Storage::disk('public')->delete($movie->poster);
+            }
+
+            $path = $request->file('poster')->store('profiles' , 'public');
+            $movie->poster = $path;
+
+        }
+
+        $movie->save();
+
+        return redirect()->route('admin.allMovies')->with('success' , 'Movie Updated');
 
     }
 }
