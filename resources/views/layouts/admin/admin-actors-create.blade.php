@@ -16,7 +16,8 @@
       </div>
     </div>
 
-    <div class="form-layout fu fu1">
+    <form class="form-layout fu fu1" action="{{ route('admin.createActor') }}" method="post" enctype="multipart/form-data">
+      @csrf
       <!-- MAIN -->
       <div>
         <div class="card">
@@ -26,35 +27,35 @@
               <div class="form-row">
                 <div class="form-group">
                   <label>First Name *</label>
-                  <input type="text" placeholder="First name">
+                  <input name="first_name" type="text" placeholder="First name">
                 </div>
                 <div class="form-group">
                   <label>Last Name *</label>
-                  <input type="text" placeholder="Last name">
+                  <input name="last_name" type="text" placeholder="Last name">
                 </div>
               </div>
               <div class="form-group">
                 <label>Biography</label>
-                <textarea placeholder="Brief biography of the actor…"></textarea>
+                <textarea name="bio" placeholder="Brief biography of the actor…"></textarea>
               </div>
               <div class="form-row">
                 <div class="form-group">
                   <label>Date of Birth</label>
-                  <input type="date">
+                  <input name="dob" type="date">
                 </div>
                 <div class="form-group">
                   <label>Nationality</label>
-                  <input type="text" placeholder="e.g. American, British">
+                  <input name="nationality" type="text" placeholder="e.g. American, British">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group">
                   <label>Place of Birth</label>
-                  <input type="text" placeholder="City, Country">
+                  <input name="pob" type="text" placeholder="City, Country">
                 </div>
                 <div class="form-group">
                   <label>Known For</label>
-                  <input type="text" placeholder="e.g. Acting, Directing">
+                  <input name="known_for" type="text" placeholder="e.g. Acting, Directing">
                 </div>
               </div>
             </div>
@@ -65,7 +66,7 @@
           <div class="card-body">
             <div class="section-title">Filmography</div>
             <div class="form-row" style="margin-bottom:.75rem">
-              <input type="text" placeholder="Search and link movies…" id="film-search">
+              <input type="text" name="film"  placeholder="Search and link movies…" id="film-search">
               <button class="btn btn-secondary" onclick="addFilm()">Link</button>
             </div>
             <div class="tags-wrap" id="film-tags">
@@ -76,7 +77,7 @@
 
         <div style="display:flex;gap:.75rem;justify-content:flex-end;margin-top:1.5rem">
           <button class="btn btn-secondary" onclick="toast('Saved as draft','success')">Save Draft</button>
-          <button class="btn btn-primary" onclick="toast('Actor added!','success'); setTimeout(() => location.href='admin-actors-index.html', 1200)">Add Actor</button>
+          <button type="submit" class="btn btn-primary" onclick="toast('Actor added!','success'); setTimeout(() => location.href='admin-actors-index.html', 1200)">Add Actor</button>
         </div>
       </div>
 
@@ -85,6 +86,7 @@
         <div class="sidebar-form-block">
           <h4>Photo</h4>
           <div class="photo-upload" onclick="toast('File picker not connected','info')">👤</div>
+          <input type="file" name="photo" id="poster-input" accept="image/*" style="display:none">
           <p style="font-size:.72rem;color:var(--text-dim);text-align:center">Square image recommended</p>
         </div>
 
@@ -100,7 +102,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </main>
 </div>
 <div id="toasts"></div>

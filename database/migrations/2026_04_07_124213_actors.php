@@ -16,12 +16,12 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->text('bio');
-            $table->year('dob');
+            $table->date('dob');
             $table->string('nationality');
             $table->string('pob');
             $table->string('known_for');
-            $table->string('photo');
-            $table->string('film');
+            $table->string('photo')->nullable();
+            $table->string('film')->nullable();
             $table->timestamps();
         });
     }
