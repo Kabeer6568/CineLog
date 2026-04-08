@@ -39,5 +39,7 @@ Route::post('/edit-movies/{id}' , [MovieController::class , 'eidtMovie'])->middl
 
 // Admin Actor Page
 
+Route::get('/all-actors' , [ActorController::class , 'allActors'])->middleware('auth')->name('admin.allActors');
+
 Route::get('/create-actors' , [ActorController::class , 'createActorPage'])->middleware('auth')->name('admin.createActorPage');
 Route::post('/create-actors' , [ActorController::class , 'createActor'])->middleware('auth')->name('admin.createActor');

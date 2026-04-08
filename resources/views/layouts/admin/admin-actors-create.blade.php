@@ -2,8 +2,7 @@
 @extends('layouts.admin.admin')
 
 @section('content')
-<div class="layout-admin">
-  <div id="admin-sidebar-placeholder" data-active="actors/create"></div>
+
 
   <main class="admin-main">
     <div class="page-header fu">
@@ -84,10 +83,14 @@
       <!-- SIDEBAR -->
       <div>
         <div class="sidebar-form-block">
-          <h4>Photo</h4>
-          <div class="photo-upload" onclick="toast('File picker not connected','info')">👤</div>
-          <input type="file" name="photo" id="poster-input" accept="image/*" style="display:none">
-          <p style="font-size:.72rem;color:var(--text-dim);text-align:center">Square image recommended</p>
+          
+          <h4>Poster</h4>
+      <div class="poster-upload" onclick="document.getElementById('poster-input').click()">
+        <div class="poster-upload-icon">🖼</div>
+        <p>Click to upload photo</p>
+        <span>JPG, PNG · 2:3 ratio recommended</span>
+      </div>
+      <input type="file" name="photo" id="poster-input" accept="image/*" style="display:none">
         </div>
 
         <div class="sidebar-form-block">

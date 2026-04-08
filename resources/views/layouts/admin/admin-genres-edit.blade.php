@@ -2,8 +2,6 @@
 @extends('layouts.admin.admin')
 
 @section('content')
-<div class="layout-admin">
-  <div id="admin-sidebar-placeholder" data-active="genres/index"></div>
 
   <main class="admin-main">
     <div class="page-header fu">

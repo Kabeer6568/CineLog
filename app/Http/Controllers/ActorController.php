@@ -45,4 +45,12 @@ class ActorController extends Controller
 
     }
 
+    public function allActors(){
+
+        $actors = Actor::all();
+
+        return view('layouts.admin.admin-actors-index' , compact('actors'));
+
+    }
+
 }

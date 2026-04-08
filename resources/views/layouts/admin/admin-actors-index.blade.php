@@ -2,8 +2,7 @@
 @extends('layouts.admin.admin')
 
 @section('content')
-<div class="layout-admin">
-  <div id="admin-sidebar-placeholder" data-active="actors/index"></div>
+
 
   <main class="admin-main">
     <div class="page-header fu">
@@ -43,78 +42,21 @@
           </tr>
         </thead>
         <tbody>
+          @foreach($actors as $actor)
           <tr>
             <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
-            <td><div class="actor-avatar-cell">👨</div></td>
-            <td><span class="td-main">Cillian Murphy</span></td>
-            <td>Irish</td>
-            <td>May 25, 1976</td>
+            <td><div class="actor-avatar-cell"><img src="{{ asset('storage/' . $actor->photo) }}" ></div></td>
+            <td><span class="td-main">{{ $actor->first_name }}</span></td>
+            <td>{{ $actor->nationality }}</td>
+            <td>{{ $actor->dob }}</td>
             <td><span class="badge badge-gold">12</span></td>
             <td><div style="display:flex;gap:.4rem">
               <a href="admin-actors-edit.html" class="btn btn-ghost btn-sm btn-icon">✎</a>
               <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete actor?', () => toast('Deleted','success'))">🗑</button>
             </div></td>
           </tr>
-          <tr>
-            <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
-            <td><div class="actor-avatar-cell">👩</div></td>
-            <td><span class="td-main">Emily Blunt</span></td>
-            <td>British</td>
-            <td>Feb 23, 1983</td>
-            <td><span class="badge badge-gold">9</span></td>
-            <td><div style="display:flex;gap:.4rem">
-              <a href="admin-actors-edit.html" class="btn btn-ghost btn-sm btn-icon">✎</a>
-              <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete actor?', () => toast('Deleted','success'))">🗑</button>
-            </div></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
-            <td><div class="actor-avatar-cell">🧑</div></td>
-            <td><span class="td-main">Timothée Chalamet</span></td>
-            <td>American / French</td>
-            <td>Dec 27, 1995</td>
-            <td><span class="badge badge-gold">14</span></td>
-            <td><div style="display:flex;gap:.4rem">
-              <a href="admin-actors-edit.html" class="btn btn-ghost btn-sm btn-icon">✎</a>
-              <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete actor?', () => toast('Deleted','success'))">🗑</button>
-            </div></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
-            <td><div class="actor-avatar-cell">👩‍🦱</div></td>
-            <td><span class="td-main">Florence Pugh</span></td>
-            <td>British</td>
-            <td>Jan 3, 1996</td>
-            <td><span class="badge badge-gold">8</span></td>
-            <td><div style="display:flex;gap:.4rem">
-              <a href="admin-actors-edit.html" class="btn btn-ghost btn-sm btn-icon">✎</a>
-              <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete actor?', () => toast('Deleted','success'))">🗑</button>
-            </div></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
-            <td><div class="actor-avatar-cell">🧔</div></td>
-            <td><span class="td-main">Robert Downey Jr.</span></td>
-            <td>American</td>
-            <td>Apr 4, 1965</td>
-            <td><span class="badge badge-gold">22</span></td>
-            <td><div style="display:flex;gap:.4rem">
-              <a href="admin-actors-edit.html" class="btn btn-ghost btn-sm btn-icon">✎</a>
-              <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete actor?', () => toast('Deleted','success'))">🗑</button>
-            </div></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="row-cb" onchange="updateBulk()"></td>
-            <td><div class="actor-avatar-cell">👩‍🦰</div></td>
-            <td><span class="td-main">Zendaya</span></td>
-            <td>American</td>
-            <td>Sep 1, 1996</td>
-            <td><span class="badge badge-gold">6</span></td>
-            <td><div style="display:flex;gap:.4rem">
-              <a href="admin-actors-edit.html" class="btn btn-ghost btn-sm btn-icon">✎</a>
-              <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete actor?', () => toast('Deleted','success'))">🗑</button>
-            </div></td>
-          </tr>
+          @endforeach
+          
         </tbody>
       </table>
     </div>
