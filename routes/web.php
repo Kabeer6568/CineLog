@@ -43,3 +43,7 @@ Route::get('/all-actors' , [ActorController::class , 'allActors'])->middleware('
 
 Route::get('/create-actors' , [ActorController::class , 'createActorPage'])->middleware('auth')->name('admin.createActorPage');
 Route::post('/create-actors' , [ActorController::class , 'createActor'])->middleware('auth')->name('admin.createActor');
+
+
+Route::get('/edit-actors/{id}' , [ActorController::class , 'editActorPage'])->middleware('auth')->name('admin.editActorPage');
+Route::post('/edit-actors/{id}' , [ActorController::class , 'editActor'])->middleware('auth')->name('admin.editActor');

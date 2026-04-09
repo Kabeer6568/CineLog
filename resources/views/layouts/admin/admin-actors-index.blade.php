@@ -12,7 +12,7 @@
         <p>Manage all actors and performers in the database.</p>
       </div>
       <div class="ph-actions">
-        <a href="admin-actors-create.html" class="btn btn-primary">
+        <a href="{{ route('admin.createActorPage') }}" class="btn btn-primary">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           Add Actor
         </a>
@@ -51,7 +51,7 @@
             <td>{{ $actor->dob }}</td>
             <td><span class="badge badge-gold">12</span></td>
             <td><div style="display:flex;gap:.4rem">
-              <a href="admin-actors-edit.html" class="btn btn-ghost btn-sm btn-icon">✎</a>
+              <a href="{{ route('admin.editActorPage' , $actor->id) }}" class="btn btn-ghost btn-sm btn-icon">✎</a>
               <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete actor?', () => toast('Deleted','success'))">🗑</button>
             </div></td>
           </tr>
