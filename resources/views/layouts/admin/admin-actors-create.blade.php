@@ -62,17 +62,20 @@
         </div>
 
         <div class="card" style="margin-top:1.25rem">
-          <div class="card-body">
-            <div class="section-title">Filmography</div>
-            <div class="form-row" style="margin-bottom:.75rem">
-              <input type="text" name="film"  placeholder="Search and link movies…" id="film-search">
-              <button class="btn btn-secondary" onclick="addFilm()">Link</button>
-            </div>
-            <div class="tags-wrap" id="film-tags">
-              <span class="film-tag">Oppenheimer <button onclick="this.parentElement.remove()">×</button></span>
-            </div>
-          </div>
-        </div>
+  <div class="card-body">
+    <div class="section-title">Filmography</div>
+    <div class="form-row" style="margin-bottom:.75rem">
+      <input type="text" placeholder="Search and link movies…" id="film-search">
+      <button type="button" class="btn btn-secondary" onclick="addFilm()">Link</button>
+    </div>
+    <div class="tags-wrap" id="film-tags">
+      <span class="film-tag">Oppenheimer <button type="button" onclick="this.parentElement.remove()">×</button></span>
+    </div>
+    <input type="hidden" name="film" id="film-value">
+  </div>
+</div>
+
+        
 
         <div style="display:flex;gap:.75rem;justify-content:flex-end;margin-top:1.5rem">
           <button class="btn btn-secondary" onclick="toast('Saved as draft','success')">Save Draft</button>

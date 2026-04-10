@@ -49,7 +49,7 @@
             <td><span class="td-main">{{ $actor->first_name }}</span></td>
             <td>{{ $actor->nationality }}</td>
             <td>{{ $actor->dob }}</td>
-            <td><span class="badge badge-gold">12</span></td>
+            <td><span class="badge badge-gold">{{ $actor->film ? count(explode(',', $actor->film)) : 0 }}</span></td>
             <td><div style="display:flex;gap:.4rem">
               <a href="{{ route('admin.editActorPage' , $actor->id) }}" class="btn btn-ghost btn-sm btn-icon">✎</a>
               <button class="btn btn-ghost btn-sm btn-icon" onclick="confirmAction('Delete actor?', () => toast('Deleted','success'))">🗑</button>
